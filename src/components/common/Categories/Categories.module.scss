@@ -1,0 +1,36 @@
+@import "../../../assets/styles/colors.scss";
+
+.categories {
+    display: flex;
+    margin: 0;
+    margin-bottom: 25px;
+    li {
+        padding: 15px;
+        background-color: white;
+        list-style-type: none;
+        color: white;
+        cursor: pointer;
+        border: 1px solid gray;
+        font-weight: 600;
+        color: $main;
+
+        &:hover {
+            transform: translateY(1px);
+        }
+
+        &.active {
+            background-color: $main;
+            color: white;
+        }
+
+        // &:first-child {
+        //     border-top-left-radius: 10px;
+        //     border-bottom-left-radius: 10px;
+        // }
+
+        // &:last-child {
+        //     border-top-right-radius: 10px;
+        //     border-bottom-right-radius: 10px;
+        // }
+    }
+}

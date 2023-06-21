@@ -1,0 +1,17 @@
+@import "../../../assets/styles/colors.scss";
+
+.button {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: $main;
+    color: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+
+    &:active {
+        background-color: darken($main, 12%);
+        transform: translateY(1px);
+    }
+}
