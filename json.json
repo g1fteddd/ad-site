@@ -1,0 +1,64 @@
+{
+    "filters": {
+        "all": ["price"],
+        "property": ["price", "typeProperty", "square", "numberRooms"],
+        "laptop": ["price", "typeLaptop", "RAM", "diagonal", "typeCPU"],
+        "cars": ["price", "minDateProduction", "transmission", "typeBody"]
+    },
+    "items": {
+        "cars": [
+            {
+                "id": 1,
+                "imageUrl": "https://sportishka.com/uploads/posts/2021-12/1639052636_21-sportishka-com-p-mashini-obichnie-sport-krasivo-foto-21.jpg",
+                "name": "BMW 5 серии б/у",
+                "price": 3370000,
+                "location": {
+                    "city": "Москва",
+                    "street": "Одесская"
+                },
+                "dateProduction": 2019,
+                "transmission": "Автомат",
+                "typeBody": "Седан"
+            },
+            {
+                "id": 2,
+                "imageUrl": "https://avtorinok.ru/photo/pics/aston-martin/v8-vantage/98969.jpg",
+                "name": "Новый Porsche Panamera",
+                "price": 6942000,
+                "location": {
+                    "city": "Санкт-Петербург",
+                    "street": "Ленина"
+                },
+                "dateProduction": 2023,
+                "transmission": "Автомат",
+                "typeBody": "Хэтчбек"
+            },
+            {
+                "id": 3,
+                "imageUrl": "https://avtoshark.com/wp-content/uploads/2020/06/ramnyy-vnedorozhnik.jpg",
+                "name": "Patriot",
+                "price": 2344000,
+                "location": {
+                    "city": "Тюмень",
+                    "street": "Луначарского"
+                },
+                "dateProduction": 2017,
+                "transmission": "Механика",
+                "typeBody": "Внедорожник"
+            },
+            {
+                "id": 4,
+                "imageUrl": "https://sportishka.com/uploads/posts/2022-11/1667490461_40-sportishka-com-p-mashini-kupe-marki-instagram-58.jpg",
+                "name": "Хонда",
+                "price": 900000,
+                "location": {
+                    "city": "Нижневартовск",
+                    "street": "Мира"
+                },
+                "dateProduction": 2010,
+                "transmission": "Механика",
+                "typeBody": "Купэ"
+            }
+        ]
+    }
+}

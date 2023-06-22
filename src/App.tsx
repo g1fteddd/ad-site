@@ -3,6 +3,8 @@ import SelectField from "./components/common/SelectField";
 import PriceRange from "./components/ui/PriceRange";
 import Categories from "./components/common/Categories";
 import Button from "./components/common/Button";
+import AdList from "./components/ui/AdList";
+import CheckboxField from "./components/common/RadioField";
 
 const App: React.FC = () => {
     // const options = [
@@ -16,58 +18,27 @@ const App: React.FC = () => {
             <div className="filters">
                 <SelectField />
                 <PriceRange />
-                <SelectField />
+                {/* <SelectField />
                 <Categories />
+                <CheckboxField /> */}
                 <Button />
             </div>
             <div className="result">
-                <h2>Результаты</h2>
-                <div className="sort">
+                <h2 className="title">Результаты</h2>
+                {/* <div className="sort">
                     <p className="label">Показать сначала:</p>
                     <ul className="sort-list">
                         <li>Популярные</li>
                         <li>Дешёвые</li>
                         <li>Новые</li>
                     </ul>
+                </div> */}
+                <div className="wrapper">
+                    <Categories />
+                    <Button />
                 </div>
-                <div className="favorites">Показать избранные</div>
-                <ul className="ad-list">
-                    <li>
-                        <img src="" alt="Картинка" />
-                        <p>Название</p>
-                        <p>Цена</p>
-                        <p>Месторасположение</p>
-                        <p>публикации</p>
-                    </li>
-                    <li>
-                        <img src="" alt="Картинка" />
-                        <p>Название</p>
-                        <p>Цена</p>
-                        <p>Месторасположение</p>
-                        <p>публикации</p>
-                    </li>
-                    <li>
-                        <img src="" alt="Картинка" />
-                        <p>Название</p>
-                        <p>Цена</p>
-                        <p>Месторасположение</p>
-                        <p>публикации</p>
-                    </li>
-                    <li>
-                        <img src="" alt="Картинка" />
-                        <p>Название</p>
-                        <p>Цена</p>
-                        <p>Месторасположение</p>
-                        <p>публикации</p>
-                    </li>
-                    <li>
-                        <img src="" alt="Картинка" />
-                        <p>Название</p>
-                        <p>Цена</p>
-                        <p>Месторасположение</p>
-                        <p>публикации</p>
-                    </li>
-                </ul>
+
+                <AdList />
             </div>
         </div>
     );
