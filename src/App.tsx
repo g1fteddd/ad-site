@@ -5,6 +5,7 @@ import Button from "./components/common/Button";
 import AdList from "./components/ui/AdList";
 import AdCategories from "./components/ui/AdCategories";
 import AdSort from "./components/ui/AdSort";
+import Pagination from "./components/ui/Pagination";
 
 const App: React.FC = () => {
     // const options = [
@@ -28,6 +29,7 @@ const App: React.FC = () => {
                 </div>
 
                 <AdList />
+                <Pagination />
             </div>
         </div>
     );

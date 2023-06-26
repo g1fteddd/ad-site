@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./AdList.module.scss";
 import AdItem from "../AdItem";
 import { useAppDispatch } from "../../../redux/store";
 import { adsSelector } from "../../../redux/ads/selectors";
 import { useSelector } from "react-redux";
-import { getAds } from "../../../redux/ads/asyncActions";
+import { getAds, getAllLengthAds } from "../../../redux/ads/asyncActions";
 import AdListSkeleton from "./AdListSkeleton";
 import { Status } from "../../../redux/ads/types";
 import { filtersSelector } from "../../../redux/filters/selectors";
@@ -13,8 +13,13 @@ const AdList: React.FC = () => {
     const dispatch = useAppDispatch();
     const { ads, status } = useSelector(adsSelector);
     const filters = useSelector(filtersSelector);
+    const isMounted = useRef(true);
 
     useEffect(() => {
+        if (isMounted.current) {
+            dispatch(getAllLengthAds());
+            isMounted.current = false;
+        }
         const categoryParam = filters.categoryId
             ? `category=${filters.categoryId}`
             : "";
@@ -25,8 +30,12 @@ const AdList: React.FC = () => {
             ? `price_lte=${filters.priceTo}`
             : "";
 
-        const sortValueParam = filters.sortValue
-            ? `_sort=${filters.sortValue}&_order=desc`
+        const sortValueParam = filters.sort
+            ? `_sort=${filters.sort.value}&_order=${filters.sort.order}`
+            : "";
+
+        const paginateParam = filters.paginate
+            ? `_page=${filters.paginate.page}&_limit=${filters.paginate.limit}`
             : "";
 
         dispatch(
@@ -35,6 +44,7 @@ const AdList: React.FC = () => {
                 priceFromParam,
                 priceToParam,
                 sortValueParam,
+                paginateParam,
             })
         );
     }, [filters]);

@@ -1,9 +1,9 @@
 import React from "react";
 import Categories from "../../common/Categories";
 import { useSelector } from "react-redux";
-import { filtersSortIdSelector } from "../../../redux/filters/selectors";
+import { filtersSortSelector } from "../../../redux/filters/selectors";
 import { useAppDispatch } from "../../../redux/store";
-import { setSortId } from "../../../redux/filters/slice";
+import { setSort } from "../../../redux/filters/slice";
 
 const AdSort: React.FC = () => {
     const dispatch = useAppDispatch();
@@ -13,16 +13,18 @@ const AdSort: React.FC = () => {
         { id: 3, value: "price", name: "по цене" },
     ];
 
-    const sortValue = useSelector(filtersSortIdSelector);
+    const sort = useSelector(filtersSortSelector);
 
     const handleChangeSort = (value: string) => {
-        dispatch(setSortId(value));
+        dispatch(
+            setSort({ value, order: sort.order === "desc" ? "asc" : "desc" })
+        );
     };
 
     return (
         <Categories
             options={sortList}
-            activeValue={sortValue}
+            activeValue={sort.value}
             onClickActiveId={handleChangeSort}
         />
     );

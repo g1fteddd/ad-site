@@ -13,5 +13,7 @@ export const filterPriceSelector = (state: RootState) => {
     return price;
 };
 
-export const filtersSortIdSelector = (state: RootState) =>
-    state.filters.sortValue;
+export const filtersSortSelector = (state: RootState) => state.filters.sort;
+
+export const filtersPaginateSelector = (state: RootState) =>
+    state.filters.paginate;

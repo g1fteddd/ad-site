@@ -21,7 +21,13 @@ export interface IItem {
 
 // export type Item = ICar; // | ICamera | ILaptop
 
+export interface IResponseData {
+    data: IItem[];
+    length: number;
+}
+
 export interface IItems {
     ads: IItem[];
+    length: number;
     status: Status;
 }
