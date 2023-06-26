@@ -1,9 +1,28 @@
 import React from "react";
 import styles from "./TextField.module.scss";
 
-const TextField: React.FC = () => {
+interface ITextFieldProps {
+    value: string | number;
+
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    type: string;
+    placeholder: string;
+}
+
+const TextField: React.FC<ITextFieldProps> = ({
+    value,
+    onChange,
+    type,
+    placeholder,
+}) => {
     return (
-        <input className={styles["input"]} type="text" placeholder="цена, от" />
+        <input
+            value={value}
+            onChange={onChange}
+            className={styles["input"]}
+            type={type}
+            placeholder={placeholder}
+        />
     );
 };
 

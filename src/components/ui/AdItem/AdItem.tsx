@@ -1,19 +1,25 @@
 import React from "react";
 import styles from "./AdItem.module.scss";
+import { IItem } from "../../../redux/ads/types";
 
-const AdItem: React.FC = () => {
+const AdItem: React.FC<IItem> = ({
+    id,
+    category,
+    imageUrl,
+    name,
+    price,
+    location,
+    dateProduction,
+}) => {
     return (
         <div className={styles["ad-item"]}>
             <div className={styles["image"]}>
-                <img
-                    src="https://sportishka.com/uploads/posts/2021-12/1639052636_21-sportishka-com-p-mashini-obichnie-sport-krasivo-foto-21.jpg"
-                    alt="Картинка"
-                />
+                <img src={imageUrl} alt="Картинка" />
             </div>
 
             <div className={styles["info"]}>
-                <h2 className={styles["name"]}>BMW 5 серии б/у</h2>
-                <p className={styles["price"]}>620 000 ₽</p>
+                <h2 className={styles["name"]}>{name}</h2>
+                <p className={styles["price"]}>{price} ₽</p>
                 <div className={styles["location"]}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +32,7 @@ const AdItem: React.FC = () => {
                         <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                     </svg>
                     <p className={styles["location-name"]}>
-                        Санкт-Петербург, ул. Центральная
+                        {location.city}, ул. {location.street}
                     </p>
                 </div>
                 <p className={styles["date-publication"]}>

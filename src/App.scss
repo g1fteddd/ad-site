@@ -1,9 +1,16 @@
+body {
+    background-color: rgb(227, 223, 255);
+}
+
 .content {
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 20px;
     margin: 20px auto;
-    width: 1080px;
+    width: 1500px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
 }
 
 .filters {

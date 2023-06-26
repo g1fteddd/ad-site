@@ -1,10 +1,10 @@
 import React from "react";
-import SelectField from "./components/common/SelectField";
 import PriceRange from "./components/ui/PriceRange";
 import Categories from "./components/common/Categories";
 import Button from "./components/common/Button";
 import AdList from "./components/ui/AdList";
-import CheckboxField from "./components/common/RadioField";
+import AdCategories from "./components/ui/AdCategories";
+import AdSort from "./components/ui/AdSort";
 
 const App: React.FC = () => {
     // const options = [
@@ -16,26 +16,15 @@ const App: React.FC = () => {
     return (
         <div className="content">
             <div className="filters">
-                <SelectField />
+                <AdCategories />
                 <PriceRange />
-                {/* <SelectField />
-                <Categories />
-                <CheckboxField /> */}
-                <Button />
             </div>
             <div className="result">
                 <h2 className="title">Результаты</h2>
-                {/* <div className="sort">
-                    <p className="label">Показать сначала:</p>
-                    <ul className="sort-list">
-                        <li>Популярные</li>
-                        <li>Дешёвые</li>
-                        <li>Новые</li>
-                    </ul>
-                </div> */}
+
                 <div className="wrapper">
-                    <Categories />
-                    <Button />
+                    <AdSort />
+                    <Button>Показать избранные</Button>
                 </div>
 
                 <AdList />
