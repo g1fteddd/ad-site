@@ -31,7 +31,6 @@ const PriceRange: React.FC = React.memo(() => {
         updatePriceTo(Number(e.target.value));
     };
 
-    console.log(valuePriceFrom);
     return (
         <div className={styles["price-range"]}>
             <p className="label">Цена, ₽</p>
@@ -42,6 +41,7 @@ const PriceRange: React.FC = React.memo(() => {
                     type="number"
                     placeholder="цена, от"
                 />
+
                 <TextField
                     value={valuePriceTo || ""}
                     onChange={handleChangePriceTo}

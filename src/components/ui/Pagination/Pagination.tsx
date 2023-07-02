@@ -7,8 +7,9 @@ import {
     adsSelector,
 } from "../../../redux/ads/selectors";
 import range from "lodash.range";
-import { filtersPaginateSelector } from "../../../redux/filters/selectors";
 import { setPaginate } from "../../../redux/filters/slice";
+
+import { filtersPaginateSelector } from "../../../redux/filters/selectors";
 
 const Pagination: React.FC = () => {
     const dispatch = useAppDispatch();

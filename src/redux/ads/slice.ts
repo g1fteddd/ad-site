@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { getAds, getAllLengthAds } from "./asyncActions";
-import { IItems, IItem, Status, IResponseData } from "./types";
+import { getAds } from "./asyncActions";
+import { IItems, Status, IResponseData } from "./types";
 
 const initialState: IItems = {
     ads: [],

@@ -17,6 +17,7 @@ export interface IItem {
     price: number;
     location: ILocation;
     dateProduction: number;
+    rating: number;
 }
 
 // export type Item = ICar; // | ICamera | ILaptop

@@ -7,7 +7,7 @@ body {
     grid-template-columns: 300px 1fr;
     gap: 20px;
     margin: 20px auto;
-    width: 1500px;
+    width: 90%;
     padding: 20px;
     background-color: #fff;
     border-radius: 20px;
@@ -19,6 +19,16 @@ body {
     & > * {
         margin-bottom: 30px;
     }
+
+    &.disabled > * {
+        pointer-events: none;
+        // color: #cccccc;
+
+        input,
+        select {
+            background-color: #f3f3f3;
+        }
+    }
 }
 
 .result {
@@ -29,5 +39,33 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+}
+
+@media (max-width: 1440px) {
+    .content {
+        margin: 20px auto;
+        width: 90%;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+        margin: 20px auto;
+        width: 90%;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 20px;
+    }
+
+    .filters {
+        height: auto;
+        width: 300px;
+        margin: 0 auto;
     }
 }

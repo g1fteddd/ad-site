@@ -21,12 +21,15 @@ const filtersSlice = createSlice({
     reducers: {
         setCategoryId: (state, action: PayloadAction<number>) => {
             state.categoryId = action.payload;
+            state.paginate = { ...initialState.paginate };
         },
         setPriceFrom: (state, action: PayloadAction<number>) => {
             state.priceFrom = action.payload;
+            state.paginate = { ...initialState.paginate };
         },
         setPriceTo: (state, action: PayloadAction<number>) => {
             state.priceTo = action.payload;
+            state.paginate = { ...initialState.paginate };
         },
         setSort: (state, action: PayloadAction<ISort>) => {
             state.sort = action.payload;
@@ -34,10 +37,22 @@ const filtersSlice = createSlice({
         setPaginate: (state, action: PayloadAction<IPaginate>) => {
             state.paginate = action.payload;
         },
+        resetPaginate: (state) => {
+            state.paginate = {
+                page: 1,
+                limit: 3,
+            };
+        },
     },
 });
 
-export const { setCategoryId, setPriceFrom, setPriceTo, setSort, setPaginate } =
-    filtersSlice.actions;
+export const {
+    setCategoryId,
+    setPriceFrom,
+    setPriceTo,
+    setSort,
+    setPaginate,
+    resetPaginate,
+} = filtersSlice.actions;
 
 export default filtersSlice.reducer;

@@ -9,6 +9,16 @@
     color: white;
     border: 1px solid gray;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+
+    & > * {
+        margin-right: 10px;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
 
     &:active {
         background-color: darken($main, 12%);

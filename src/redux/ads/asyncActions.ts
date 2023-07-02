@@ -32,14 +32,3 @@ export const getAds = createAsyncThunk("ads/getAds", async (props: IGetAds) => {
         length: responseForLength.data.length,
     };
 });
-
-export const getAllLengthAds = createAsyncThunk(
-    "ads/getAllLengthAds",
-    async () => {
-        const res = await axios.get<IItem[]>(
-            "https://my-json-server.typicode.com/g1fteddd/data/items"
-        );
-
-        return res.data.length;
-    }
-);

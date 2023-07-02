@@ -1,10 +1,7 @@
-import { ICategory } from "../categories/types";
-
 export interface ISort {
     value: string;
     order: string;
 }
-
 export interface IPaginate {
     page: number;
     limit: number;
