@@ -18,7 +18,10 @@ const App: React.FC = () => {
                 <h2 className="title">Результаты</h2>
 
                 <div className="wrapper">
-                    <AdSort />
+                    <div className={isFavorites ? "disabled" : ""}>
+                        <AdSort />
+                    </div>
+
                     <Button onClick={() => setFavorites(!isFavorites)}>
                         {isFavorites ? (
                             <svg
@@ -47,7 +50,7 @@ const App: React.FC = () => {
                             </svg>
                         )}
 
-                        <p>Показать избранные</p>
+                        <p>{isFavorites ? "Скрыть" : "Показать"} избранные</p>
                     </Button>
                 </div>
 
